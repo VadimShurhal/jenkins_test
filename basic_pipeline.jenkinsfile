@@ -4,19 +4,19 @@ pipeline {
         stage('Build') {
             steps {
                 println("Show system installed python version")
-                sh 'python3 --version'
+                sh 'echo "Build stage"'
             }
         }
         stage('Test') {
             steps {
                 println("Show system installed python version for a tests")
-                sh 'python3 --version'
+                sh 'echo "Test stage"'
             }
         }
         stage('Deploy') {
             steps {
                 println("Show system installed python version for a deploy")
-                sh 'python3 --version'
+                sh 'echo "Deploy stage"'
             }
         }
     }
