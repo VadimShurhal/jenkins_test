@@ -3,7 +3,7 @@ pipeline {
     parameters {
         string(name: "dev_branch", defaultValue: "main", description: "which branch to use")
         booleanParam(name: "run_tests", description: "Run test stage from dev_branch repo", defaultValue: false)
-        choice(name: "test_target", choices:["all", 1, "site1", "site2", "locals"],  description: "Run test stage for test targets [all, site1, site2, locals]")
+        choice(name: "test_target", choices:["all", 1, 2, "site1", "site2", "locals"],  description: "Run test stage for test targets [all, site1, site2, locals]")
         }
     stages {
         stage('Build Stage') {
