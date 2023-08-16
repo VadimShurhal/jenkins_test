@@ -1,0 +1,22 @@
+pipeline {
+    agent 'any'
+    parameters {
+        string(name: "branch", defaultValue: "main", description: "which branch to use")
+        booleanParam(name: "TEST_UPPER", description: "True to skip this test", defaultValue: false)
+        booleanParam(name: "TEST_ISUPPER", description: "True to skip this test", defaultValue: false)
+        }
+    stages {
+        stage('Prepare venv') {
+            steps {
+                sh "python3 -m venv venv"
+                sh ". /venv/bin/activate"
+                sh "pip install -r requirements.txt"
+            }
+        }
+        stage('Test Stage') {
+            steps {
+                sh 'pytest'
+            }
+        }
+    }
+}
