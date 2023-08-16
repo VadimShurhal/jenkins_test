@@ -11,7 +11,7 @@ pipeline {
                 // sh 'echo ${params.dev_branch}'
                 sh "echo ${params.dev_branch}"
                 println("Show dev_branch")
-                sh 'python3 --version'
+                sh 'env | grep dev_branch'
                 println("Run stage with parameter: ${params.dev_branch}")
             }
         }
