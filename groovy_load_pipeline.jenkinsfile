@@ -1,5 +1,5 @@
-PATH = "/var/lib/jenkins/workspace/groovy_load_pipeline"
-def importCommon() {common = load "${PATH}/common_functions.groovy"; return common; }
+def rootDir = pwd()
+def importCommon() {common = load "${rootDir}@script/common_functions.groovy"; return common; }
 
 pipeline {
     agent 'any'
