@@ -1,11 +1,8 @@
-def importCommon = load "common_functions.groovy";
+PATH = "/var/lib/jenkins/workspace/TestProject/groovy_load_pipeline"
+def importCommon() {common = load "${PATH}/common_functions.groovy"; return common; }
 
 pipeline {
-    agent {
-        node {
-            label 'master'
-        }
-    }
+    agent 'any'
     parameters {
         string(name: "dev_branch", defaultValue: "main", description: "which branch to use")
         booleanParam(name: "run_tests", description: "Run test stage from dev_branch repo", defaultValue: false)
