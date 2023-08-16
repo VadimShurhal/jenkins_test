@@ -1,5 +1,4 @@
-def rootDir = pwd()
-def importCommon() {common = load "${rootDir}@script/common_functions.groovy"; return common; }
+def importCommon = load "common_functions.groovy";
 
 pipeline {
     agent 'any'
