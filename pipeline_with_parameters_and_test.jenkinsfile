@@ -8,16 +8,13 @@ pipeline {
     stages {
         stage('Prepare venv') {
             steps {
-                sh "echo 'Prepare env'"
-                sh "echo $TEST_UPPER"
-                sh "echo $TEST_ISUPPER"
+                sh "python3.11 -m venv venv"
+                sh ". venv/bin/activate"
+                sh "pip install -r requirements.txt"
             }
         }
         stage('Test Stage') {
             steps {
-                sh "python3.11 -m venv venv"
-                sh ". venv/bin/activate"
-                sh "pip install -r requirements.txt"
                 sh 'pytest'
             }
         }
