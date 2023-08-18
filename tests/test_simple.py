@@ -1,9 +1,10 @@
 import os
+from distutils import util
 
 import pytest
 
-TEST_UPPER = bool(eval(os.environ.get('TEST_UPPER')))
-TEST_ISUPPER = bool(eval(os.environ.get('TEST_ISUPPER')))
+TEST_UPPER = util.strtobool(os.environ.get('TEST_UPPER'))
+TEST_ISUPPER = util.strtobool(os.environ.get('TEST_ISUPPER'))
 
 
 class TestClass:
