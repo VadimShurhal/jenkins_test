@@ -6,31 +6,18 @@ pipeline {
         booleanParam(name: "DB_TESTS", description: "True to skip this test db", defaultValue: false)
         }
     stages {
-        stage('Prepare venv') {
-            steps {
-                sh "python3.11 -m venv venv"
-                sh ". venv/bin/activate"
-                sh "pip install -r requirements.txt"
-            }
-        }
         stage('Test UI') {
             steps {
-                sh "python3.11 -m venv venv"
-                sh ". venv/bin/activate"
                 sh 'pytest tests/test_ui.py'
             }
         }
         stage('Test API') {
             steps {
-                sh "python3.11 -m venv venv"
-                sh ". venv/bin/activate"
                 sh 'pytest tests/test_api.py'
             }
         }
         stage('Test DB') {
             steps {
-                sh "python3.11 -m venv venv"
-                sh ". venv/bin/activate"
                 sh 'pytest tests/test_db.py'
             }
         }
