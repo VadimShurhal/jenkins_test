@@ -30,7 +30,6 @@ pipeline {
                 println("Tests target ${params.test_target}")
                 sh 'python3 --version'
                 sh "pwd && ls -la"
-                common.admin_user()
                 common.check_branch(${params.dev_branch})
             }}
         }      
