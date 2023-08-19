@@ -21,7 +21,8 @@ pipeline {
                 if ( job_build.getResult() == "FAILURE") {
                   currentBuild.result = "FAILURE"
                   }
-            }}
+            }
+          }
         }     
         stage('Test Site2') {
             steps { script {

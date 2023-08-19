@@ -10,7 +10,7 @@ DB_TESTS = util.strtobool(os.environ.get('DB_TESTS'))
 class TestDB:
 
     def test_db_upper(self):
-        assert 'foo'.upper() == 'FOO'
+        assert 'foo'.upper() == 'FOOd'
 
     def test_db_isupper(self):
         assert 'FOO'.isupper()
